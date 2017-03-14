@@ -63,16 +63,17 @@ supports = {
 profile = {
   'type' => 'object',
   'properties' => {
-    'title' => { 'type' => 'string' },
-    'maintainer' => { 'type' => 'string' },
-    'copyright' => { 'type' => 'string' },
-    'copyright_email' => { 'type' => 'string' },
-    'license' => { 'type' => 'string' },
-    'summary' => { 'type' => 'string' },
-    'version' => { 'type' => 'string' },
+    'title' => { 'type' => 'string', 'optional' => true },
+    'maintainer' => { 'type' => 'string', 'optional' => true },
+    'copyright' => { 'type' => 'string', 'optional' => true },
+    'copyright_email' => { 'type' => 'string', 'optional' => true },
+    'license' => { 'type' => 'string', 'optional' => true },
+    'summary' => { 'type' => 'string', 'optional' => true },
+    'version' => { 'type' => 'string', 'optional' => true },
     'supports' => {
       'type' => 'array',
       'items' => supports,
+      'optional' => true,
     },
     'controls' => {
       'type' => 'array',
@@ -104,7 +105,7 @@ min_control = {
   'type' => 'object',
   'properties' => {
     'id' => { 'type' => 'string' },
-    'profile_id' => { 'type' => 'string' },
+    'profile_id' => { 'type' => %w{string null} },
     'status' => { 'type' => 'string' },
     'code_desc' => { 'type' => 'string' },
     'skip_message' => { 'type' => 'string', 'optional' => true },
